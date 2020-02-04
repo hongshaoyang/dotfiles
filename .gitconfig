@@ -1,0 +1,46 @@
+[user]
+	name = Shao Yang
+	email = hongsy2006@gmail.com
+[alias]
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	p = push
+	pl = pull
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lg2 = log --graph --oneline --decorate --all
+[color]
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+	eol = lf
+[diff]
+	tool = kdiff3
+[difftool "kdiff3"]
+	path = 
+	trustExitCode = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[merge]
+	tool = kdiff3
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+	default = simple
+
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[credential]
+	helper = cache --timeout=3600
+[help]
+	autocorrect = 10
+
