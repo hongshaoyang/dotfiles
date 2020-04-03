@@ -119,3 +119,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# go related stuff
+export PATH=$PATH:$HOME/go/bin
