@@ -38,20 +38,17 @@ function saytime() { echo "it's" `date +"%l:%M %p"` | say ;}
 # source fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# alias e as emacsclient
-alias e='emacsclient -t -c -a ""'
-
 # source exa
 if type "exa" > /dev/null; then
     alias ls='exa'
     alias ll='exa -lga --sort oldest'
 fi
 
-# alias q
+# aliases
 alias q='QHOME=~/q rlwrap -r ~/q/m32/q'
-
-# added by Anaconda3 installer
-. /Users/hong/anaconda3/etc/profile.d/conda.sh
+alias k='kubectl'
+alias kcfg='k config'
+alias kg='k get'
 
 # add GOBIN to path
 export PATH=$PATH:/Users/hong/go/bin
@@ -64,3 +61,19 @@ source ~/.bashrc
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/hong/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/hong/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/hong/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/hong/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
