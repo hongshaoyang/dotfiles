@@ -68,7 +68,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git kubetail zsh-autosuggestions)
+plugins=(git golang kubetail zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -118,6 +118,15 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+loop () {
+    echo watching "$@"...
+    while true
+    do
+        "$@"
+        sleep 1
+    done
+}
 
 # go related stuff
 export PATH=$PATH:$HOME/go/bin
