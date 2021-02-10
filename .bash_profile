@@ -60,7 +60,6 @@ source ~/.bashrc
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-export PATH="$HOME/.cargo/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -77,3 +76,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+source "$HOME/.cargo/env"
