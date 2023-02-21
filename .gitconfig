@@ -1,6 +1,6 @@
 [user]
-	name = Shao Yang
-	email = hongsy2006@gmail.com
+	name = Shao Yang Hong
+	email = shaoyang.hong@ninjavan.co
 [alias]
 	st = status
 	ci = commit
@@ -28,8 +28,6 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[push]
-	default = simple
 
 [filter "hawser"]
 	clean = git hawser clean %f
@@ -43,4 +41,5 @@
 	helper = cache --timeout=3600
 [help]
 	autocorrect = 10
-
+[url "ssh://git@git.ninjavan.co:7999/"]
+    insteadOf = https://bitbucket.ninjavan.co/scm/

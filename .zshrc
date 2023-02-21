@@ -68,7 +68,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git golang kubetail zsh-autosuggestions)
+plugins=(git golang kubectl kubetail zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,8 +97,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias kcfg="kubectl config"
-alias k="kubectl"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -130,5 +128,22 @@ loop () {
     done
 }
 
-# go related stuff
-export PATH=$PATH:$HOME/go/bin
+# path related stuff
+export PATH=$PATH:$HOME/go/bin:$HOME/Library/Python/3.7/bin
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Make FZF UI slightly prettier
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
+# Enable using `lfcd` to browse and change directory
+LFCD=${HOME}/.config/lf/lfcd.sh
+if [ -f $LFCD ]; then
+    source $LFCD
+fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/shaoyanghong/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/shaoyanghong/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/shaoyanghong/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shaoyanghong/google-cloud-sdk/completion.zsh.inc'; fi
