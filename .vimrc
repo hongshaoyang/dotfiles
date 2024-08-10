@@ -9,6 +9,8 @@ filetype plugin indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
+" Ignore case when searching
+set ignorecase
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
