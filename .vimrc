@@ -21,7 +21,8 @@ set ruler
 " A buffer becomes hidden when it is abandoned
 set hid
 
-
+" Set line numbers
+set number
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
