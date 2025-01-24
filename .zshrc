@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/shaoyanghong/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -97,27 +97,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias tg="terragrunt"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 source "$HOME/.cargo/env"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/shaoyanghong/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/shaoyanghong/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/shaoyanghong/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/shaoyanghong/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 loop () {
     echo watching "$@"...
@@ -129,12 +115,9 @@ loop () {
 }
 
 # path related stuff
-export PATH=$PATH:$HOME/go/bin:$HOME/Library/Python/3.7/bin
+export PATH=$PATH:$HOME/go/bin:$HOME/.tiup/bin:/opt/homebrew/opt/mysql@5.7/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Make FZF UI slightly prettier
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 # Enable using `lfcd` to browse and change directory
 LFCD=${HOME}/.config/lf/lfcd.sh
@@ -147,3 +130,5 @@ if [ -f '/Users/shaoyanghong/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sh
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/shaoyanghong/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shaoyanghong/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
