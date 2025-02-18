@@ -99,6 +99,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tg="terragrunt"
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -131,4 +133,3 @@ if [ -f '/Users/shaoyanghong/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sh
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/shaoyanghong/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shaoyanghong/google-cloud-sdk/completion.zsh.inc'; fi
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
