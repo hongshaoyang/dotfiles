@@ -117,7 +117,7 @@ loop () {
 # path related stuff
 export PATH=$PATH:$HOME/go/bin:$HOME/.tiup/bin:/opt/homebrew/opt/mysql@5.7/bin
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 # Enable using `lfcd` to browse and change directory
 LFCD=${HOME}/.config/lf/lfcd.sh
